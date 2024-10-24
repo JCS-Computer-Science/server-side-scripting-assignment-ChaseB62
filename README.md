@@ -69,8 +69,8 @@ activeSessions = {
 - `index.html` contains a basic client for your Wordle server. It assumes your server meets the requirements below, and may help you understand what your server is meant to do. If your server is working correctly, you should be able to play Wordle on this website.
 - During development, you are probably better off using Thunder Client to manually test your endpoints, and the included Jest tests for automated tests. Using `index.html` is by no means a thorough or even efficient way to test your code as you go.
 ### GET /newgame:
-- **PR1**: Generates a new unique ID using the UUID library
-- **PR2**: Starts a new game by creating a new empty game state object and adding it to the active sessions object with the new ID as the key.
+- **PR1**: Generates a new unique ID using the UUID library !
+- **PR2**: Starts a new game by creating a new empty game state object and adding it to the active sessions object with the new ID as the key. !
 - **PR2**: Randomly choose a word for the game state's wordToGuess property
 - **DV2**: Responds with status code 201 (Created) 
 - **PR1**: Responds with the new session ID in the body of the response as `body.sessionID`
