@@ -4,10 +4,10 @@ const server = express();
 server.use(express.json());
 server.use(express.static('public'));
 
-
-
 //All your code goes here
-let activeSessions={}
+let activeSessions={
+
+}
 
 server.get('/newgame', (req, res)=>{
     let newID = uuid.v4();
@@ -22,29 +22,29 @@ server.get('/newgame', (req, res)=>{
         gameOver: false
 
     }
-    activeSessions[newID] = newGame;
+    activeSessions[newID] = newGame
     console.log(activeSessions);
 
     res.status(201);
     res.send({sessionID: newID});
+
+})
+
+server.get('/gamestate', (req, res) => {
+    let id = req.query.activeSessions;
+
+    res.send(id);
     
 })
 
-server.get('/gamestate', (req, res) =>{
-    req.query(sessionID);
-
-    res.status(200);
-    res.send({gameState: sessionID});
-})
-
-server.get('/guess', (req, res) =>{
-    console.log("nice guess moron!");
+// server.get('/guess', (req, res) =>{
+//     console.log("nice guess moron!");
     
-})
+// })
 
 async function GetWord(){
     
-    const words = ["penis", "wanks", "dicks", "asses", "farts", "poops", "shits", "fucks", "clone", "state", "reset", "guess", "local", "blame", "pause", "script", "pulse", "chase", "space", "share", "launch", "words", "serve", "index"]
+    const words = ["clone", "state", "reset", "guess", "local", "blame", "pause", "script", "pulse", "chase", "space", "share", "launch", "words", "serve", "index"]
     const randomId = Math.floor(Math.random() * words.length);
     const word = words[randomId];
 
