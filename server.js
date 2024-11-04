@@ -41,6 +41,18 @@ server.get('/newgame', (req, res) => {
 
 })
 
+server.get('/guess', (req, res) => {
+
+})
+
+server.get('/reset', (req, res) => {
+    
+})
+
+server.get('/delete', (req, res) => {
+    
+})
+
 //Do not remove this line. This allows the test suite to start
 //multiple instances of your server on different ports
 module.exports = server;
